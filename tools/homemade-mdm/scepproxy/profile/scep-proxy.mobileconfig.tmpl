@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadContent</key>
+			<dict>
+				<!--
+				Trade-off (see HOMEMADE-SCEP-PROXY.md): this v1 homemade
+				proxy is a transparent relay, it does not rewrite/inject a
+				per-device challenge the way Fleet EE's CA-config feature
+				does. The challenge below is static and visible to anyone
+				who reads this profile (same as any classic pre-Fleet-EE
+				SCEP payload). Replace with your real CA's enrollment
+				challenge, or point it at your own CA's dynamic challenge
+				mechanism if it has one.
+				-->
+				<key>Challenge</key>
+				<string>__SCEP_CHALLENGE__</string>
+				<key>Key Type</key>
+				<string>RSA</string>
+				<!-- 5 = kSecKeyUsageDigitalSignature | kSecKeyUsageKeyEncipherment -->
+				<key>Key Usage</key>
+				<integer>5</integer>
+				<key>Keysize</key>
+				<integer>2048</integer>
+				<key>Name</key>
+				<string>__PROFILE_NAME__</string>
+				<key>Subject</key>
+				<array>
+					<array>
+						<array>
+							<string>CN</string>
+							<string>%HostName% homemade-scep</string>
+						</array>
+					</array>
+				</array>
+				<!-- Points at OUR standalone scepproxy service, not Fleet. -->
+				<key>URL</key>
+				<string>__SCEP_PROXY_URL__</string>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Homemade SCEP</string>
+			<key>PayloadIdentifier</key>
+			<string>com.homemade.mdm.scep</string>
+			<key>PayloadType</key>
+			<string>com.apple.security.scep</string>
+			<key>PayloadUUID</key>
+			<string>__PAYLOAD_UUID__</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDisplayName</key>
+	<string>Homemade SCEP Proxy</string>
+	<key>PayloadIdentifier</key>
+	<string>com.homemade.mdm.scep.root</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>__ROOT_UUID__</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

@@ -1,0 +1,15 @@
+# Snippet à fusionner dans votre fichier GitOps Fleet existant (celui utilisé
+# par `fleetctl gitops`, cf docs/Contributing/architecture/mdm/apple-declarative-device-management.md).
+# Ne PAS lancer `fleetctl gitops` avec UNIQUEMENT ce fichier s'il existe déjà
+# une config GitOps complète pour cette organisation : gitops est déclaratif
+# et remplace l'état complet, il faut fusionner cette clé dans le fichier
+# existant plutôt que de l'appliquer isolément.
+
+controls:
+  macos_settings:
+    custom_settings:
+      - path: ./scep-proxy.mobileconfig
+        # Optionnel : restreindre à un label de hosts particulier si vous ne
+        # voulez pas pousser ce profil à toute la flotte tout de suite.
+        # labels_include_all:
+        #   - Test SCEP maison

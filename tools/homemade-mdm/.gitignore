@@ -1,0 +1,16 @@
+# Secrets and generated artifacts - never commit these.
+**/keys/
+**/*.key
+**/*.pem
+**/*.p7m
+**/credentials.json
+**/*.csv
+**/data/
+**/*.pkg
+
+# Compiled binaries (built with `go build -o ...` per the notebooks)
+depsync/depsync
+scepproxy/scepproxy
+usermapper/usermapper
+androidcmd/androidcmd
+bootstrappkg/bootstrappkg
