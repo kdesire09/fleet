@@ -137,3 +137,5 @@ custom-gcl
 
 # dibble (the seed slinger) — binary lives next to source
 tools/dibble/dibble
+
+.claude/settings.local.json
