@@ -35,21 +35,20 @@
 # (1 or more Golang-literate engineers is required to review changes.)
 # FUTURE: Look for a way to not have this notify every single person in this "github team".
 ##############################################################################################
-*.go @fleetdm/go
-go.sum @fleetdm/go
-go.mod @fleetdm/go
-/cmd/ @fleetdm/go
-/server/ @fleetdm/go
-/server/api_endpoints/api_endpoints.yml @rachaelshaw # « API endpoint display names in the Fleet UI (API-only users)
-/ee/server/ @fleetdm/go
-/orbit/ @fleetdm/go
+*.go @yvesleopoldbeugre
+go.sum @yvesleopoldbeugre
+go.mod @yvesleopoldbeugre
+/cmd/ @yvesleopoldbeugre
+/server/ @yvesleopoldbeugre
+/ee/server/ @yvesleopoldbeugre
+/orbit/ @yvesleopoldbeugre
 
 ##############################################################################################
 # 🚀 React files and other files related to the core product frontend.
 # (1 or more React-literate engineers is required to review changes.)
 # FUTURE: Look for a way to not have this notify every single person in this "github team".
 ##############################################################################################
-/frontend/ @fleetdm/frontend
+/frontend/ @kdesire09
 
 ##############################################################################################
 # 🚀 Config as code for infrastructure, internal security and IT use cases, and more.
