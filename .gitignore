@@ -1,5 +1,7 @@
 # binaries
 *.exe
+.agents
+.claude/launch.json
 
 # output directories
 /build
